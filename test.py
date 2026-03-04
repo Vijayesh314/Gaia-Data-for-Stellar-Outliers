@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("gaia_clean_sample.csv")
+df = pd.read_csv("data/gaiaraw.csv")
 
 print(df.shape)
 print(df.columns)
@@ -31,4 +31,5 @@ df["distance_pc"] = 1000 / df["parallax"]
 df["pm_total"] = np.sqrt(
     df["pmra"]**2 + df["pmdec"]**2
 )
+
 df["vt_kms"] = 4.74 * df["pm_total"] / df["parallax"]
